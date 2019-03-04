@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Simplo-Medium';
+    font-style: normal;
+    font-weight: 400;
+
+    src: url('../fonts/Simplo-Medium.otf'); /* IE9 Compat Modes */
+    src: local('Simplo-Medium'), local('Simplo-Medium'),
+    url('../fonts/Simplo-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Simplo-Thin';
+    font-style: normal;
+    font-weight: 400;
+
+    src: url('../fonts/Simplo-Thin.otf'); /* IE9 Compat Modes */
+    src: local('Simplo-Thin'), local('Simplo-Thin'),
+    url('../fonts/Simplo-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Simplo-Light';
+    font-style: normal;
+    font-weight: 400;
+
+    src: url('../fonts/Simplo-Light.otf'); /* IE9 Compat Modes */
+    src: local('Simplo-Light'), local('Simplo-Light'),
+    url('../fonts/Simplo-Light.otf') format('opentype');
+}
