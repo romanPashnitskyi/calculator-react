@@ -4,4 +4,4 @@ Simple Calculator built on React.
 
 ## Demo
 
-Check the calculator-react on [Heroku](https://pure-atoll-59860.herokuapp.com/)
+Check the calculator-react on [Heroku](https://hidden-reef-29031.herokuapp.com/)
