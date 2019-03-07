@@ -18,7 +18,6 @@ function CalculatorDisplay(props) {
     let scaleDown = null;
 
     formattedValue = parseFloat(value).toLocaleString(undefined, {minimumFractionDigits: precisionWithFraction});
-    console.log(formattedValue);
     if (formattedValue === 'NaN') {
         formattedValue = 'Error';
     } else {
@@ -72,8 +71,14 @@ class Calculator extends Component {
         let newOperator = null;
         let stringToEvaluate = null;
 
-        if (firstOperand === '0' || operator == null || operator === '=' || waitingForOperand) {
-            console.log('', operator);
+        console.log('first', firstOperand);
+        console.log('disp', displayValue);
+
+        if (firstOperand == null) {
+            this.setState({firstOperand: displayValue, operator: newKeyValue, clearAll: false});
+        }
+
+        if (firstOperand === '0' || operator == null || operator === '=') {
             this.setState({waitingForOperand: true, firstOperand: displayValue, operator: newKeyValue, clearAll: false});
             return;
         } else {
@@ -86,7 +91,7 @@ class Calculator extends Component {
             if (newDisplayValue === "Infinity") {
                 newDisplayValue = 'Error';
             }
-            newOperator = (newKeyValue === "=")? null: newKeyValue;
+            newOperator = (newKeyValue === "=")? null : newKeyValue;
             this.setState({displayValue: `${newDisplayValue}`, waitingForOperand: true, firstOperand: `${newDisplayValue}`, operator: newOperator, clearAll: false})
         }
     }
@@ -169,6 +174,14 @@ class Calculator extends Component {
                 this.processFunctionKey(newKeyValue);
             }
         }
+    }
+
+    componentDidMount() {
+        document.addEventListener('keydown', this.handleClick)
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keydown', this.handleClick)
     }
 
     render() {
